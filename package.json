@@ -4,7 +4,7 @@
   "description": "utils generator using qr, weather, currency, pdf",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon ."
   },
   "repository": {
     "type": "git",
@@ -22,9 +22,13 @@
   },
   "homepage": "https://github.com/its-me-sujan/utils-generator#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "cors": "^2.8.5",
+    "currency-converter-lt": "^1.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "nodemon": "^1.14.9"
   }
 }
