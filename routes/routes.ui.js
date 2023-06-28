@@ -7,9 +7,22 @@ router.get("/", (req, res) => {
   res.render("index");
 });
 
-router.get("/contact", (req, res) => {
-  res.render("contact");
+router.get("/accounts", (req, res) => {
+  res.render("accounts");
 });
+router.get("/add-product", (req, res) => {
+  res.render("add-product");
+});
+router.get("/edit-product", (req, res) => {
+  res.render("edit-product");
+});
+router.get("/login", (req, res) => {
+  res.render("login");
+});
+router.get("/products", (req, res) => {
+  res.render("products");
+});
+
 router.get("/converter/:currency1/:currency2/:value", async (req, res) => {
   const { currency1, currency2, value } = req.params; //params get value in string
   const currencyConverter = new CC({
