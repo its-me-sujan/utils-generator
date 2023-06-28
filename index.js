@@ -26,6 +26,11 @@ app.set("views", "./views");
 // Serving the static files
 app.use(express.static("public"));
 
+// Trying to test the application level error handler
+app.get("/broken", (req, res, next) => {
+  throw new Error("Broken");
+});
+
 app.use("/", indexRouter);
 
 // Application level error handler
