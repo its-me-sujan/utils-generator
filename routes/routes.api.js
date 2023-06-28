@@ -1,8 +1,13 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    res.json({msg:"Hello from API"});
+//mostly error handler is done in routes api
+router.get("/", (req, res, next) => {
+    try {
+        res.json({msg:"Hello from API"});
+    } catch (err) {
+        next(err);
+    }
 });
 
 module.exports = router;
