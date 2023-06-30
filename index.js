@@ -22,7 +22,7 @@ const indexRouter = require("./routes");
 app.use(morgan("short"));
 app.use(cors());
 app.use(bodyParer.json()); // json ko data lai read garna suru gar
-app.use(bodyParer.urlencoded({extended:true})); // for form data capture 
+app.use(bodyParer.urlencoded({extended:false})); // for form data capture 
 
 // setting up the EJS Templating
 app.set("view engine", "ejs");
