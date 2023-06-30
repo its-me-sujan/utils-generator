@@ -10,4 +10,8 @@ router.get("/", (req, res, next) => {
     }
 });
 
-module.exports = router;
+router.post("/form", (req, res, next) => {
+    console.log({ data: req.body });
+    res.json({ msg: "Hello form FORM api"});
+});
+module.exports = router;   
