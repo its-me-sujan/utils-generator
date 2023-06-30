@@ -6,9 +6,16 @@
     <title>Contacts</title>
 </head>
 <body>
-    <form id="contactForm">
+    <form id="contactForm" onSubmit="formSubmit(); return false;">
         <input type="text" name="name" placeholder="Enter your name"/>
         <button type="submit">Submit</button>
     </form>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="javascript">
+        function formSubmit() {
+            console.log("inside formSubmit");
+            const contactForm = document.getElementByID("contactForm");
+        }
+    </script>
 </body>
-</html> 
+</html>  
