@@ -7,14 +7,27 @@
 </head>
 <body>
     <form id="contactForm" onSubmit="formSubmit(); return false;">
-        <input type="text" name="name" placeholder="Enter your name"/>
+        <input type="text" id = "name" name="name" placeholder="Enter your name"/>
         <button type="submit">Submit</button>
     </form>
+    <div id="msg"></div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script type="javascript">
+    <script type="text/javascript">
         function formSubmit() {
+            // Check for function trigger
             console.log("inside formSubmit");
-            const contactForm = document.getElementByID("contactForm");
+            const contactForm = document.getElementById("contactForm");
+            // Caputure input from form
+            const payload = {
+                name: document.getElementById("name").value,
+            };
+            // Send data to server
+            axios.post("/api/v1/form", payload).then((res) => {
+                // Display the data
+                document.getElementById("msg").innerHTML = res.data.msg;
+                //reset the form after success
+                contactForm.reset();
+            });
         }
     </script>
 </body>
