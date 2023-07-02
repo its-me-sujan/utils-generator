@@ -1,13 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-const contactRouter = require("../modules/contacts/contact.routes.api");
+const contactController = require("./contact.controller");
+
 router.get("/", (req, res, next) => {
-  try {
-    res.json({ msg: "Hello from API " });
-  } catch (err) {
-    next(err);
-  }
+  res.json({ msg: "Hello from contact API!" });
 });
 
 // Create
@@ -17,9 +14,16 @@ router.post("/", (req, res, next) => {
 });
 
 // List
-router.post("/list", async (req, res, next) => {
-    console.log({ data: req.body});
-    const list = await contactController.list();
-  });
+router.get("/list", async (req, res, next) => {
+  console.log({ data: req.body });
+  const list = await contactController.list();
+  res.json({ data: list });
+});
+
+// getById
+
+// update
+
+// remove
 
 module.exports = router;

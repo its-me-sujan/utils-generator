@@ -1,6 +1,7 @@
 const Model = require("./contact.model");
 
 const create = (payload) => {
+    // writing in DB
     return Model.create(payload);
 };
 
@@ -20,3 +21,5 @@ const update = (id, payload) => {
 const remove = (id) => {
     return Model.deleteOne(id);
 };
+
+module.exports = {create, list, getById, update, remove};
