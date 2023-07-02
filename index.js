@@ -1,8 +1,12 @@
-const express = require("express");
-const morgan = require("morgan");
+const bodyParer = require("body-parser");
 const cors = require("cors");
 const ejs = require("ejs");
-const bodyParer = require("body-parser");
+const express = require("express");
+const mongoose = require("mongoose");
+const morgan = require("morgan");
+
+// mongodb connection 
+mongoose.connect("mongodb://localhost:27017/utils-generator").then(() => console.log("Database Connected!"));
 
 const myPort = 8090;
 
@@ -24,12 +28,12 @@ app.use(cors());
 app.use(bodyParer.json()); // json ko data lai read garna suru gar
 app.use(bodyParer.urlencoded({extended:false})); // for form data capture 
 
-// setting up the EJS Templating
-app.set("view engine", "ejs");
-app.set("views", "./views");
 
 // Serving the static files
 app.use(express.static("public"));
+// setting up the EJS Templating
+app.set("view engine", "ejs");
+app.set("views", "./views");
 
 // Trying to test the application level error handler
 app.get("/broken", (req, res, next) => {
