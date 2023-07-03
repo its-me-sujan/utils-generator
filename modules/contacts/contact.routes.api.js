@@ -24,7 +24,9 @@ router.get("/list", async (req, res, next) => {
 router.get("", async(req, res, next) => {});
 
 // update
+router.set("", async(req, res, next) => {});
 
 // remove
+router.delete("", async(req, res, next) => {});
 
 module.exports = router;
