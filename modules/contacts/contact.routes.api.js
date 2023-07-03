@@ -21,6 +21,7 @@ router.get("/list", async (req, res, next) => {
 });
 
 // getById
+router.get("", async(req, res, next) => {});
 
 // update
 
