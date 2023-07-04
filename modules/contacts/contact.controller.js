@@ -1,4 +1,4 @@
-const contactModel = require("./contact.contact.model");
+const contactModel = require("./contact.model");
 
 // CRUD Ops
 const create = (payload) => {
